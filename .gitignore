@@ -1,0 +1,6 @@
+venv
+venv/*
+miniconda
+miniconda/*
+.git
+.git/*

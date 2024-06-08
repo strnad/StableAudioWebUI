@@ -34,14 +34,8 @@ if %errorlevel% equ 0 (
 call conda create -n stableaudio python=3.11 -y
 
 :: Ensure the environment is activated and install the necessary packages
-call conda run -n stableaudio conda install -y packaging
+pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu124
 call conda run -n stableaudio pip install -r requirements.txt
-
-:: Check if .env file exists, if not copy .env_example to .env
-if not exist "%SCRIPT_DIR%.env" (
-    echo .env file does not exist. Copying .env_example to .env...
-    copy "%SCRIPT_DIR%.env_example" "%SCRIPT_DIR%.env"
-)
 
 
 echo Installation completed successfully. Do not forget to update the .env file with your credentials. Then run run_conda.bat to start the app.

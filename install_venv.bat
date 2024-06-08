@@ -14,8 +14,8 @@ if %errorlevel% neq 0 (
 )
 
 echo Installing requirements...
+pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu124
 pip install -r requirements.txt --no-cache
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 if %errorlevel% neq 0 (
     echo Failed to install requirements
     exit /b %errorlevel%

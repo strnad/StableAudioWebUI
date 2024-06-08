@@ -67,7 +67,7 @@ def generate_audio(prompt, steps, cfg_scale, sigma_min, sigma_max, generation_ti
     os.makedirs(save_path, exist_ok=True)
 
     # Generate a filename based on the prompt
-    filename = re.sub(r'\W+', '_', prompt) + ".mp3"
+    filename = re.sub(r'\W+', '_', prompt[:120]) + ".mp3"
     full_path = os.path.join(save_path, filename)
 
     # Ensure the filename is unique by appending a number if the file already exists

@@ -10,7 +10,7 @@ set CONDA_PATH=%SCRIPT_DIR%miniconda
 call "%CONDA_PATH%\Scripts\activate.bat"
 
 :: Activate the conda environment
-call conda activate crewai_env || (
+call conda activate stableaudio || (
     echo Failed to activate conda environment
     exit /b 1
 )

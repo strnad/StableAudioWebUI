@@ -14,8 +14,8 @@ else
     exit 1
 fi
 
-# Activate the crewai environment
-conda activate crewai
+# Activate the stableaudio environment
+conda activate stableaudio
 
 # Navigate to the script directory
 cd "$SCRIPT_DIR"

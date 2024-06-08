@@ -24,18 +24,18 @@ if not exist "%CONDA_PATH%" (
 call "%CONDA_PATH%\Scripts\activate.bat"
 
 :: Remove the existing environment if it exists
-call conda env list | findstr crewai_env
+call conda env list | findstr stableaudio
 if %errorlevel% equ 0 (
     echo Removing existing conda environment...
-    call conda remove --name crewai_env --yes --quiet
+    call conda remove --name stableaudio --yes --quiet
 )
 
 :: Create a new environment
-call conda create -n crewai_env python=3.11 -y
+call conda create -n stableaudio python=3.11 -y
 
 :: Ensure the environment is activated and install the necessary packages
-call conda run -n crewai_env conda install -y packaging
-call conda run -n crewai_env pip install -r requirements.txt
+call conda run -n stableaudio conda install -y packaging
+call conda run -n stableaudio pip install -r requirements.txt
 
 :: Check if .env file exists, if not copy .env_example to .env
 if not exist "%SCRIPT_DIR%.env" (
